@@ -33,7 +33,8 @@ http://halogenica.net
 
 ##System requirements:
 --------------------
-Windows 7+ or Mac OSX 10.7+
+* VS2012 on Windows 7+
+* Xcode 5 on Mac OSX 10.7+
 
 
 ##To build from source:
@@ -43,13 +44,13 @@ Built using VS2012 on Win, Xcode5 on Mac
 All project paths are relative, root can be whatever you want. My root (~) is C:/Code/..
 
 ###Directory trees:
-~/games/CULL_SHOT/..                           		(requires all of the below to be built first)
-~/libraries/cinder_0.8.6_dev/..                		(github.com/cinder/Cinder/tree/dev, requies boost to build)
-~/libraries/cinder_0.8.6_dev/boost/..          		(sourceforge.net/projects/boost/files/boost/1.53.0/)
-~/libraries/cinder_0.8.6_dev/blocks/Bullet/..       (github.com/halogenica/Cinder-Bullet)
-~/libraries/cinder_0.8.6_dev/blocks/Gamepad/.. 		(github.com/halogenica/Cinder-Gamepad)
-~/libraries/cinder_0.8.6_dev/blocks/OpenAL/..       (github.com/halogenica/Cinder-OpenAL)
-~/libraries/cinder_0.8.6_dev/blocks/SimpleGUI/..    (github.com/halogenica/Cinder-SimpleGUI)
+* ~/games/Engen/..  (requires all of the below to be built first)
+* ~/libraries/cinder_0.8.6_dev/.. (github.com/cinder/Cinder/tree/dev, requies boost to build)
+* ~/libraries/cinder_0.8.6_dev/boost/.. (sourceforge.net/projects/boost/files/boost/1.53.0/)
+* ~/libraries/cinder_0.8.6_dev/blocks/Bullet/.. (github.com/halogenica/Cinder-Bullet)
+* ~/libraries/cinder_0.8.6_dev/blocks/Gamepad/..  (github.com/halogenica/Cinder-Gamepad)
+* ~/libraries/cinder_0.8.6_dev/blocks/OpenAL/.. (github.com/halogenica/Cinder-OpenAL)
+* ~/libraries/cinder_0.8.6_dev/blocks/SimpleGUI/..  (github.com/halogenica/Cinder-SimpleGUI)
 
 
 ##About the example project:
@@ -57,29 +58,29 @@ All project paths are relative, root can be whatever you want. My root (~) is C:
 An example game is included in this source. It is a simple demonstration of how to organize game logic in the engine. Two players represented by spheres can be controlled independently using 2 gamepads or WASD and arrows on the keyboard. Three cubes exist in the scene, one of which is red. The game is over when one of the players fires a projectile which collides with the red cube. It demonstrates how to create independent players, load models and textures, render arbitrary fonts for dynamic text, perform 3D physics simulation with collision callbacks, play music and sound effects, utilize game controller and keyboard input, and rough organization of game logic.
 
 ###Controls:
-*	*Up, Down, Left, Right* - Move Player 1
-*	*WASD* - Move Player 2
-*	*Space* - Shoot (both players)
-*	*F1* - Toggle GUI
-*	*F2* - Toggle Statistics (Debug only)
-*	*F3* - Toggle Wireframe (Debug only)
-*	*F4* - Advance Game State (Debug only)
-*	*F* - Fullscreen
-*	*ESC* - Exit
+-	*Up, Down, Left, Right* - Move Player 1
+-	*WASD* - Move Player 2
+-	*Space* - Shoot (both players)
+-	*F1* - Toggle GUI
+-	*F2* - Toggle Statistics (Debug only)
+-	*F3* - Toggle Wireframe (Debug only)
+-	*F4* - Advance Game State (Debug only)
+-	*F* - Fullscreen
+-	*ESC* - Exit
 
 ###Gamepad Controls:
-*	*Left Analog* - Move Player
-*	*A button (360) / X button (PS3)* - Shoot
+-	*Left Analog* - Move Player
+-	*A button (360) / X button (PS3)* - Shoot
 
 ###File Structure:
-*	*App/App* - Setup, shutdown and main loop. Inherits from Cinder's AppNative with implicit calls to draw() and update().
-*	*App/Input* - Per-player input handling of both keyboard/mouse and gamepad events.
-*	*Blocks/...* - Cinder block interfaces (Cinder plugins).
-*	*Game/Enemy* - The large cubes in the demo, inherit from ObjectData with some metadata and collision function.
-*	*Game/Player* - The large spheres in the demo with a collection of bullets, and a definition of the bullets with metadata.
-*	*Game/PlayerCam* - Wrapper for independent cammeras per player, but only a single camera used in this demo.
-*	*Game/World* - Responsible for setting up game-specific structures (camera, players, enemies, etc). Only a single instance.
-*	*ObjectData/ObjectData* - Root object of component based model; integrates RenderData and PhysicsData, and any other component data you may wish to add (AIData, AnimationData, etc). For example, physics can change position of an object, which render needs to know about, so ObjectData reconciles this information.
+-	*App/App* - Setup, shutdown and main loop. Inherits from Cinder's AppNative with implicit calls to draw() and update().
+-	*App/Input* - Per-player input handling of both keyboard/mouse and gamepad events.
+-	*Blocks/...* - Cinder block interfaces (Cinder plugins).
+-	*Game/Enemy* - The large cubes in the demo, inherit from ObjectData with some metadata and collision function.
+-	*Game/Player* - The large spheres in the demo with a collection of bullets, and a definition of the bullets with metadata.
+-	*Game/PlayerCam* - Wrapper for independent cammeras per player, but only a single camera used in this demo.
+-	*Game/World* - Responsible for setting up game-specific structures (camera, players, enemies, etc). Only a single instance.
+-	*ObjectData/ObjectData* - Root object of component based model; integrates RenderData and PhysicsData, and any other component data you may wish to add (AIData, AnimationData, etc). For example, physics can change position of an object, which render needs to know about, so ObjectData reconciles this information.
 -	*ObjectData/PhysicsData* - Bullet physics wrapper for physics bounding box and collision information.
 - 	*ObjectData/RenderData* - 3D mesh, color and texture information. Does not implement a material system yet. 
 -	*ObjectData/SpriteSheet* - Static or animated sprite textures, work in progress.
@@ -99,4 +100,4 @@ An example game is included in this source. It is a simple demonstration of how 
 *	Autodetect or create physics bounding box for arbitrary model
 *	Proper 3D animation support with skinning
 *	Rumble support for controllers
-*	Memory tracking revealed leaks in the Cind library on windows
+*	Memory tracking revealed leaks in the Cinder library on windows
