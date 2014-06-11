@@ -1,0 +1,156 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="App">
+      <UniqueIdentifier>{e94e02fa-e139-4c64-9844-d1a118b3bb55}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game">
+      <UniqueIdentifier>{131d263d-4cec-492a-a786-5c77ad0512fa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ObjectData">
+      <UniqueIdentifier>{3a7c7a28-e66b-4263-9ff4-2187df68490c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="System">
+      <UniqueIdentifier>{9dd66b05-75f7-4600-9e5e-7461df7beaeb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Utils">
+      <UniqueIdentifier>{c25c84b0-fc35-405d-b04d-57cedb895e5a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Blocks">
+      <UniqueIdentifier>{3285c50b-deec-463a-b117-0e5cbfcb2f18}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Blocks\SimpleGUI">
+      <UniqueIdentifier>{f1394040-8c6b-4232-862f-08ad95bf89ed}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Blocks\Gamepad">
+      <UniqueIdentifier>{957938c7-b631-428d-a730-0f978484525e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Particles">
+      <UniqueIdentifier>{42a45e1e-0fec-46e2-9c5a-f241a2fa425c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Blocks\OpenAL">
+      <UniqueIdentifier>{1d521252-3e8c-4f6e-afd0-af0846373af7}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\src\App\App.cpp">
+      <Filter>App</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\App\Input.cpp">
+      <Filter>App</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\ObjectData\ObjectData.cpp">
+      <Filter>ObjectData</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\ObjectData\PhysicsData.cpp">
+      <Filter>ObjectData</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\System\ObjectManager.cpp">
+      <Filter>System</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Utils\Stats.cpp">
+      <Filter>Utils</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\main.cpp" />
+    <ClCompile Include="..\src\ObjectData\RenderData.cpp">
+      <Filter>ObjectData</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\ObjectData\SpriteSheet.cpp">
+      <Filter>ObjectData</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Game\Player.cpp">
+      <Filter>Game</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Particles\LineParticle.cpp">
+      <Filter>Particles</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Particles\Particle.cpp">
+      <Filter>Particles</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Particles\SquareParticle.cpp">
+      <Filter>Particles</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Game\World.cpp">
+      <Filter>Game</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Game\PlayerCam.cpp">
+      <Filter>Game</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\libraries\cinder_0.8.6_dev\blocks\SimpleGUI\src\SimpleGUI.cpp">
+      <Filter>Blocks\SimpleGUI</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Game\Enemy.cpp">
+      <Filter>Game</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\libraries\cinder_0.8.6_dev\blocks\OpenAL\src\OpenAL.cpp">
+      <Filter>Blocks\OpenAL</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\src\App\App.h">
+      <Filter>App</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\App\Input.h">
+      <Filter>App</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\ObjectData\ObjectData.h">
+      <Filter>ObjectData</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\ObjectData\PhysicsData.h">
+      <Filter>ObjectData</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\System\Common.h">
+      <Filter>System</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\System\ObjectManager.h">
+      <Filter>System</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Utils\Stats.h">
+      <Filter>Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\System\Resources.h">
+      <Filter>System</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\ObjectData\RenderData.h">
+      <Filter>ObjectData</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\ObjectData\SpriteSheet.h">
+      <Filter>ObjectData</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Game\Player.h">
+      <Filter>Game</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Particles\LineParticle.h">
+      <Filter>Particles</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Particles\Particle.h">
+      <Filter>Particles</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Particles\SquareParticle.h">
+      <Filter>Particles</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Game\World.h">
+      <Filter>Game</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Game\PlayerCam.h">
+      <Filter>Game</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\libraries\cinder_0.8.6_dev\blocks\Gamepad\include\Gamepad.h">
+      <Filter>Blocks\Gamepad</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\libraries\cinder_0.8.6_dev\blocks\SimpleGUI\include\SimpleGUI.h">
+      <Filter>Blocks\SimpleGUI</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\libraries\cinder_0.8.6_dev\blocks\OpenAL\include\OpenAL.h">
+      <Filter>Blocks\OpenAL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Game\Enemy.h">
+      <Filter>Game</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Resources.rc">
+      <Filter>System</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+</Project>

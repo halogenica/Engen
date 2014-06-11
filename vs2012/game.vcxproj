@@ -1,0 +1,160 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{74202EDD-91D2-4D2A-B0B6-355CEB16E6BE}</ProjectGuid>
+    <RootNamespace>gameApp</RootNamespace>
+    <Keyword>Win32Proj</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>Unicode</CharacterSet>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <PlatformToolset>v110</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v110</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.30319.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(SolutionDir)$(Configuration)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(Configuration)\</IntDir>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</LinkIncremental>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(SolutionDir)$(Configuration)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(Configuration)\</IntDir>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>..\src;..\..\..\libraries\cinder_0.8.6_dev\include;..\..\..\libraries\cinder_0.8.6_dev\boost;..\..\..\libraries\cinder_0.8.6_dev\blocks\Bullet\src;..\..\..\libraries\cinder_0.8.6_dev\blocks\OpenAL\include;..\..\..\libraries\cinder_0.8.6_dev\blocks\SimpleGUI\include;..\..\..\libraries\cinder_0.8.6_dev\blocks\Gamepad\include;..\..\..\libraries\cinder_0.8.6_dev\blocks\Audio2\include;..\..\..\libraries\cinder_0.8.6_dev\blocks\Audio2\src</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;DEBUG;_WINDOWS;NOMINMAX;AL_LIBTYPE_STATIC;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>false</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+    </ClCompile>
+    <ResourceCompile>
+      <AdditionalIncludeDirectories>..\..\..\libraries\cinder_0.8.6_dev\include;..\src;..\src\System;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Link>
+      <AdditionalDependencies>OpenAL_d.lib;BulletCollision-v110_d.lib;BulletDynamics-v110_d.lib;LinearMath-v110_d.lib;winmm.lib;cinder-v110_d.lib;audio2_d.lib;Gamepad_d.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>..\..\..\libraries\cinder_0.8.6_dev\lib\msw;..\..\..\libraries\cinder_0.8.6_dev\lib\msw\x86;..\..\..\libraries\cinder_0.8.6_dev\blocks\Bullet\lib\msw\x86;..\..\..\libraries\cinder_0.8.6_dev\blocks\Audio2\lib\msw;$(DXSDK_DIR)\Lib\x86;..\..\..\libraries\cinder_0.8.6_dev\blocks\Gamepad\lib\msw\x86;..\..\..\libraries\cinder_0.8.6_dev\blocks\OpenAL\lib\msw\x86;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <RandomizedBaseAddress>false</RandomizedBaseAddress>
+      <DataExecutionPrevention>
+      </DataExecutionPrevention>
+      <TargetMachine>MachineX86</TargetMachine>
+      <IgnoreSpecificDefaultLibraries>LIBCMT</IgnoreSpecificDefaultLibraries>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>..\src;..\..\..\libraries\cinder_0.8.6_dev\include;..\..\..\libraries\cinder_0.8.6_dev\boost;..\..\..\libraries\cinder_0.8.6_dev\blocks\Bullet\src;..\..\..\libraries\cinder_0.8.6_dev\blocks\OpenAL\include;..\..\..\libraries\cinder_0.8.6_dev\blocks\SimpleGUI\include;..\..\..\libraries\cinder_0.8.6_dev\blocks\Gamepad\include;..\..\..\libraries\cinder_0.8.6_dev\blocks\Audio2\include;..\..\..\libraries\cinder_0.8.6_dev\blocks\Audio2\src</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;NOMINMAX;AL_LIBTYPE_STATIC;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+    </ClCompile>
+    <ProjectReference>
+      <LinkLibraryDependencies>true</LinkLibraryDependencies>
+    </ProjectReference>
+    <ResourceCompile>
+      <AdditionalIncludeDirectories>..\..\..\libraries\cinder_0.8.6_dev\include;..\src;..\src\System;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Link>
+      <AdditionalDependencies>OpenAL.lib;BulletCollision-v110.lib;BulletDynamics-v110.lib;LinearMath-v110.lib;winmm.lib;cinder-v110.lib;audio2.lib;Gamepad.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>..\..\..\libraries\cinder_0.8.6_dev\lib\msw;..\..\..\libraries\cinder_0.8.6_dev\lib\msw\x86;..\..\..\libraries\cinder_0.8.6_dev\blocks\Bullet\lib\msw\x86;..\..\..\libraries\cinder_0.8.6_dev\blocks\Audio2\lib\msw;$(DXSDK_DIR)\Lib\x86;..\..\..\libraries\cinder_0.8.6_dev\blocks\Gamepad\lib\msw\x86;..\..\..\libraries\cinder_0.8.6_dev\blocks\OpenAL\lib\msw\x86;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <GenerateMapFile>true</GenerateMapFile>
+      <SubSystem>Windows</SubSystem>
+      <OptimizeReferences>true</OptimizeReferences>
+      <EnableCOMDATFolding>
+      </EnableCOMDATFolding>
+      <RandomizedBaseAddress>false</RandomizedBaseAddress>
+      <DataExecutionPrevention>
+      </DataExecutionPrevention>
+      <TargetMachine>MachineX86</TargetMachine>
+      <IgnoreSpecificDefaultLibraries>
+      </IgnoreSpecificDefaultLibraries>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\libraries\cinder_0.8.6_dev\blocks\OpenAL\src\OpenAL.cpp" />
+    <ClCompile Include="..\..\..\libraries\cinder_0.8.6_dev\blocks\SimpleGUI\src\SimpleGUI.cpp" />
+    <ClCompile Include="..\src\App\App.cpp" />
+    <ClCompile Include="..\src\App\Input.cpp" />
+    <ClCompile Include="..\src\Game\Enemy.cpp" />
+    <ClCompile Include="..\src\Game\Player.cpp" />
+    <ClCompile Include="..\src\Game\PlayerCam.cpp" />
+    <ClCompile Include="..\src\Game\World.cpp" />
+    <ClCompile Include="..\src\main.cpp" />
+    <ClCompile Include="..\src\ObjectData\ObjectData.cpp" />
+    <ClCompile Include="..\src\ObjectData\PhysicsData.cpp" />
+    <ClCompile Include="..\src\ObjectData\RenderData.cpp" />
+    <ClCompile Include="..\src\ObjectData\SpriteSheet.cpp" />
+    <ClCompile Include="..\src\Particles\LineParticle.cpp" />
+    <ClCompile Include="..\src\Particles\Particle.cpp" />
+    <ClCompile Include="..\src\Particles\SquareParticle.cpp" />
+    <ClCompile Include="..\src\System\ObjectManager.cpp" />
+    <ClCompile Include="..\src\Utils\Stats.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Resources.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\libraries\cinder_0.8.6_dev\blocks\Gamepad\include\Gamepad.h" />
+    <ClInclude Include="..\..\..\libraries\cinder_0.8.6_dev\blocks\OpenAL\include\OpenAL.h" />
+    <ClInclude Include="..\..\..\libraries\cinder_0.8.6_dev\blocks\SimpleGUI\include\SimpleGUI.h" />
+    <ClInclude Include="..\src\App\App.h" />
+    <ClInclude Include="..\src\App\Input.h" />
+    <ClInclude Include="..\src\Game\Enemy.h" />
+    <ClInclude Include="..\src\Game\Player.h" />
+    <ClInclude Include="..\src\Game\PlayerCam.h" />
+    <ClInclude Include="..\src\Game\World.h" />
+    <ClInclude Include="..\src\ObjectData\ObjectData.h" />
+    <ClInclude Include="..\src\ObjectData\PhysicsData.h" />
+    <ClInclude Include="..\src\ObjectData\RenderData.h" />
+    <ClInclude Include="..\src\ObjectData\SpriteSheet.h" />
+    <ClInclude Include="..\src\Particles\LineParticle.h" />
+    <ClInclude Include="..\src\Particles\Particle.h" />
+    <ClInclude Include="..\src\Particles\SquareParticle.h" />
+    <ClInclude Include="..\src\System\Common.h" />
+    <ClInclude Include="..\src\System\ObjectManager.h" />
+    <ClInclude Include="..\src\System\Resources.h" />
+    <ClInclude Include="..\src\Utils\Stats.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
