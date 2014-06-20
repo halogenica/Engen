@@ -7,6 +7,8 @@
 #include "Game/PlayerCam.h"
 
 using namespace gen;
+using namespace ci;
+using namespace ci::app;
 
 // externs
 extern ContactProcessedCallback gContactProcessedCallback;

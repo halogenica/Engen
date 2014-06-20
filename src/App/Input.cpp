@@ -7,8 +7,9 @@
 #include "Game/Player.h"
 #include "Game/World.h"
 
-using namespace ci;
 using namespace gen;
+using namespace ci;
+using namespace ci::app;
 
 #define POLL_ITERATION_INTERVAL 10
 
@@ -113,7 +114,7 @@ void Input::Update(float dt)
     }
 }
 
-bool Input::KeyDown(ci::app::KeyEvent event)
+bool Input::KeyDown(KeyEvent event)
 {
     const auto key = event.getCode();
     bool retval = true;
@@ -175,7 +176,7 @@ bool Input::KeyDown(ci::app::KeyEvent event)
     return (retval);
 }
 
-bool Input::KeyUp(ci::app::KeyEvent event)
+bool Input::KeyUp(KeyEvent event)
 {
     const auto key = event.getCode();
     bool retval = true;
@@ -204,37 +205,37 @@ bool Input::KeyUp(ci::app::KeyEvent event)
     return retval;
 }
 
-bool Input::MouseDown(ci::app::MouseEvent event)
+bool Input::MouseDown(MouseEvent event)
 {
     return false;
 }
 
-bool Input::MouseDrag(ci::app::MouseEvent event)
+bool Input::MouseDrag(MouseEvent event)
 {
     return false;
 }
 
-bool Input::MouseUp(ci::app::MouseEvent event)
+bool Input::MouseUp(MouseEvent event)
 {
     return false;
 }
 
-bool Input::MouseWheel(ci::app::MouseEvent event)
+bool Input::MouseWheel(MouseEvent event)
 {
     return false;
 }
 
-bool Input::TouchesBegan(ci::app::TouchEvent event)
+bool Input::TouchesBegan(TouchEvent event)
 {
     return false;
 }
 
-bool Input::TouchesMoved(ci::app::TouchEvent event)
+bool Input::TouchesMoved(TouchEvent event)
 {
     return false;
 }
 
-bool Input::TouchesEnded(ci::app::TouchEvent event)
+bool Input::TouchesEnded(TouchEvent event)
 {
     return false;
 }

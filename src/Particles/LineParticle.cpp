@@ -2,10 +2,9 @@
 
 using namespace gen;
 using namespace ci;
-using namespace ci::app;
 
-LineParticle::LineParticle(const ci::Vec3f&     startPos,
-                           const ci::Vec3f&     endPos) :
+LineParticle::LineParticle(const Vec3f&     startPos,
+                           const Vec3f&     endPos) :
                                Particle(),
                                m_startPos(startPos),
                                m_endPos(endPos),

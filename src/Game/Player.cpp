@@ -5,9 +5,10 @@
 
 using namespace gen;
 using namespace ci;
+using namespace ci::app;
 
-Player::Player(const ci::Vec3f pos, OpenAL::Sound* pSfx) :
-                   ObjectData(new RenderData(ci::app::loadResource(RES_SPHERE_OBJ), ci::ColorAf(1.f, 0.f, 0.f, 1.f)),
+Player::Player(const Vec3f pos, OpenAL::Sound* pSfx) :
+                   ObjectData(new RenderData(loadResource(RES_SPHERE_OBJ), ColorAf(1.f, 0.f, 0.f, 1.f)),
                               NULL,
                               pos, Quatf(0.f,0.f,0.f), Vec3f(1.f,1.f,1.f)),
                    m_origPos(pos),
@@ -17,7 +18,7 @@ Player::Player(const ci::Vec3f pos, OpenAL::Sound* pSfx) :
 
     for (int i = 0; i < 20; i++)
     {
-        Bullet* pBullet =   new Bullet(new RenderData(ci::app::loadResource(RES_SPHERE_OBJ), ci::ColorAf(1.f, 0.f, 0.f, 1.f)),
+        Bullet* pBullet =   new Bullet(new RenderData(loadResource(RES_SPHERE_OBJ), ColorAf(1.f, 0.f, 0.f, 1.f)),
                                        new PhysicsData(new btSphereShape(0.25f), 1, COL_BULLET, COL_EVERYTHING),
                                        GetPos(), Quatf(0.f,0.f,0.f), Vec3f(0.5f,0.5f,0.5f));
         pBullet->m_pRenderData->m_cellshadePercent = 0.2f;

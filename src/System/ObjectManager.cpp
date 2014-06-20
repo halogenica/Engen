@@ -8,6 +8,7 @@
 
 using namespace gen;
 using namespace ci;
+using namespace ci::app;
 
 ObjectManager::ObjectManager()
 {
@@ -38,7 +39,7 @@ ObjectManager::ObjectManager()
                     m_fboFormat);
     
     // Load shaders
-    m_passthroughShader = gl::GlslProg(ci::app::loadResource(RES_VERT_PASSTHROUGH_SHADER), ci::app::loadResource(RES_FRAG_PASSTHROUGH_SHADER));
+    m_passthroughShader = gl::GlslProg(loadResource(RES_VERT_PASSTHROUGH_SHADER), loadResource(RES_FRAG_PASSTHROUGH_SHADER));
 
     // Calculate BGM length
     // Could set looping in OpenAL sound, however these audio files were designed to
@@ -56,8 +57,8 @@ ObjectManager::ObjectManager()
     m_text.setAlignment(TextBox::CENTER);
 
     // Load textures
-    m_titleTex = gl::Texture(ci::loadImage(ci::app::loadResource(RES_TITLE_TEX)));
-    m_creditsTex = gl::Texture(ci::loadImage(ci::app::loadResource(RES_CREDITS_TEX)));
+    m_titleTex = gl::Texture(ci::loadImage(loadResource(RES_TITLE_TEX)));
+    m_creditsTex = gl::Texture(ci::loadImage(loadResource(RES_CREDITS_TEX)));
     CreateScreenTextures();
 
     // Setup GUI
@@ -122,8 +123,8 @@ void ObjectManager::GameOver()
 void ObjectManager::FullscreenToggled()
 {
     g_pApp->setFullScreen(m_fullscreen);
-    m_fbo = gl::Fbo(g_pApp->getWindowWidth()*ci::app::getWindow()->getContentScale(),
-                    g_pApp->getWindowHeight()*ci::app::getWindow()->getContentScale(),
+    m_fbo = gl::Fbo(g_pApp->getWindowWidth()*getWindow()->getContentScale(),
+                    g_pApp->getWindowHeight()*getWindow()->getContentScale(),
                     m_fboFormat);
 }
 

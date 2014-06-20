@@ -8,9 +8,9 @@ using namespace ci;
 
 gen::ObjectData::ObjectData(RenderData*          pRenderData,   // pRenderData can be NULL
                             PhysicsData*         pPhysicsData,  // pPhysicsData can be NULL
-                            const ci::Vec3f&     pos,
-                            const ci::Quatf&     rot,
-                            const ci::Vec3f&     scale) :
+                            const Vec3f&     pos,
+                            const Quatf&     rot,
+                            const Vec3f&     scale) :
                                 m_pRenderData(pRenderData),
                                 m_pPhysicsData(pPhysicsData),
                                 m_pos(pos),
@@ -50,8 +50,8 @@ void gen::ObjectData::Update(float dt)
         btQuaternion rot = btTrans.getRotation();
 
         // Overwrite this ObjectData's transform data with those from the physics engine
-        m_pos = ci::Vec3f(pos.x(), pos.y(), pos.z());
-        m_rot = ci::Quatf(rot.w(), rot.x(), rot.y(), rot.z());
+        m_pos = Vec3f(pos.x(), pos.y(), pos.z());
+        m_rot = Quatf(rot.w(), rot.x(), rot.y(), rot.z());
     }
 }
 
@@ -63,7 +63,7 @@ void gen::ObjectData::Draw()
     }
 }
 
-void ObjectData::SetPos(ci::Vec3f pos)
+void ObjectData::SetPos(Vec3f pos)
 {
     m_pos = pos;
     if (m_pPhysicsData)
@@ -72,7 +72,7 @@ void ObjectData::SetPos(ci::Vec3f pos)
     }
 }
 
-void ObjectData::SetRot(ci::Quatf rot)
+void ObjectData::SetRot(Quatf rot)
 {
     m_rot = rot;
     if (m_pPhysicsData)
@@ -81,7 +81,7 @@ void ObjectData::SetRot(ci::Quatf rot)
     }
 }
 
-void ObjectData::SetScale(ci::Vec3f scale)
+void ObjectData::SetScale(Vec3f scale)
 {
 //    ASSERT(!"Not Implemented!");
     m_scale = scale;

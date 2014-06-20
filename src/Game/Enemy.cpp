@@ -6,13 +6,14 @@
 
 using namespace gen;
 using namespace ci;
+using namespace ci::app;
 
 Enemy::Enemy(const TYPE         type,
-             const ci::Vec3f    pos,
-             const ci::Quatf    rot,
-             const ci::Vec3f    scale,
+             const Vec3f    pos,
+             const Quatf    rot,
+             const Vec3f    scale,
              OpenAL::Sound*     pSfx) :
-                 ObjectData(new RenderData(ci::app::loadResource(RES_CUBE_OBJ), ci::ColorAf(1.f*type, 0.f, 0.f, 1.f)),
+                 ObjectData(new RenderData(loadResource(RES_CUBE_OBJ), ColorAf(1.f*type, 0.f, 0.f, 1.f)),
                             new PhysicsData(new btBoxShape(btVector3(0.5f*scale.x, 0.5f*scale.y, 0.5f*scale.z)), 5, COL_ENEMY, COL_EVERYTHING),
                             pos, rot, scale),
                  m_type(type),

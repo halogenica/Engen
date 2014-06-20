@@ -6,9 +6,9 @@
 using namespace gen;
 using namespace ci;
 
-gen::RenderData::RenderData(const ci::DataSourceRef& mesh,
-                            const ci::ColorA& color,
-                            const ci::DataSourceRef& tex):
+gen::RenderData::RenderData(const DataSourceRef& mesh,
+                            const ColorA& color,
+                            const DataSourceRef& tex):
                                 m_color(color),
                                 m_cellshadePercent(0.0f),
                                 m_pSpriteSheet(NULL),
@@ -16,12 +16,12 @@ gen::RenderData::RenderData(const ci::DataSourceRef& mesh,
                                 m_secondsPerSprite(1.0f),
                                 m_spritePlayTime(0.0f)
 {
-    ci::ObjLoader loader(mesh);
+    ObjLoader loader(mesh);
     loader.load(&m_mesh);
     
     if (tex)    // implicitly shared resources default construct to NULL
     {
-        m_tex = gl::Texture(ci::loadImage(tex));
+        m_tex = gl::Texture(loadImage(tex));
 
         // disable bilinear filtering
         m_tex.setMinFilter(GL_NEAREST);
@@ -32,38 +32,38 @@ gen::RenderData::RenderData(const ci::DataSourceRef& mesh,
     g_pStats->AddTriangles(m_mesh.getNumTriangles());
 }
 
-gen::RenderData::RenderData(const ci::DataSourceRef& mesh,
+gen::RenderData::RenderData(const DataSourceRef& mesh,
                             SpriteSheet* spriteSheet,
                             const UINT index):
                                 m_tex(spriteSheet->m_tex),
-                                m_color(ci::ColorA(1.0f, 1.0f, 1.0f, 1.0f)),
+                                m_color(ColorA(1.0f, 1.0f, 1.0f, 1.0f)),
                                 m_cellshadePercent(0.0f),
                                 m_pSpriteSheet(spriteSheet),
                                 m_spriteRange(index,index),
                                 m_secondsPerSprite(1.0f),
                                 m_spritePlayTime(0.0f)
 {
-    ci::ObjLoader loader(mesh);
+    ObjLoader loader(mesh);
     loader.load(&m_mesh);
 
     g_pStats->AddVertices(m_mesh.getNumVertices());
     g_pStats->AddTriangles(m_mesh.getNumTriangles());
 }
 
-gen::RenderData::RenderData(const ci::DataSourceRef& mesh,
+gen::RenderData::RenderData(const DataSourceRef& mesh,
                             SpriteSheet* spriteSheet,
-                            const ci::Vec2i spriteRange,
+                            const Vec2i spriteRange,
                             float secondsPerSprite,
                             float spritePlayTime) :
                                 m_tex(spriteSheet->m_tex),
-                                m_color(ci::ColorA(1.0f, 1.0f, 1.0f, 1.0f)),
+                                m_color(ColorA(1.0f, 1.0f, 1.0f, 1.0f)),
                                 m_cellshadePercent(0.0f),
                                 m_pSpriteSheet(spriteSheet),
                                 m_spriteRange(spriteRange),
                                 m_secondsPerSprite(secondsPerSprite),
                                 m_spritePlayTime(spritePlayTime)
 {    
-    ci::ObjLoader loader(mesh);
+    ObjLoader loader(mesh);
     loader.load(&m_mesh);
 
     g_pStats->AddVertices(m_mesh.getNumVertices());
@@ -76,7 +76,7 @@ gen::RenderData::~RenderData()
     g_pStats->SubTriangles(m_mesh.getNumTriangles());
 }
 
-void gen::RenderData::Draw(const ci::Vec3f& pos, const ci::Quatf& rot, const ci::Vec3f& scale)
+void gen::RenderData::Draw(const Vec3f& pos, const Quatf& rot, const Vec3f& scale)
 {
     if (m_pSpriteSheet)
     {
@@ -111,7 +111,7 @@ void gen::RenderData::Draw(const ci::Vec3f& pos, const ci::Quatf& rot, const ci:
     else
     {
         gl::pushMatrices();
-        ci::Matrix44f modelView;
+        Matrix44f modelView;
         gl::multModelView(modelView); // TODO: use this
 
         if (m_cellshadePercent > 0)
@@ -165,7 +165,7 @@ void gen::RenderData::Update(float dt)
 }
 
 
-void gen::RenderData::SetSpriteRange(const ci::Vec2i& range)
+void gen::RenderData::SetSpriteRange(const Vec2i& range)
 {
     m_spritePlayTime = 0.0f;
     m_spriteRange = range;

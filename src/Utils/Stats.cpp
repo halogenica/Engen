@@ -13,13 +13,15 @@ const char* gameStateNames [] =
 
 using namespace std;
 using namespace gen;
+using namespace ci;
+using namespace ci::app;
 
 Stats::Stats()
 : m_FPS(0.0f), m_UPS(0.0f), m_numTris(0), m_numVertices(0), m_numRigidBodies(0), m_cursorX(0), m_cursorY(0)
 {
     ASSERT(NUM_GAME_STATES == (sizeof(gameStateNames) / sizeof (gameStateNames[0])));
-    m_textFont = ci::gl::TextureFont::create(ci::Font(ci::app::loadResource(RES_STATS_FONT), 24)); // pf_tempesta_seven.ttf has problems with new line
-    m_textBoundsRect = ci::Rectf(40.f, m_textFont->getAscent() + 20.f, getWindowWidth(), getWindowHeight());
+    m_textFont = gl::TextureFont::create(Font(loadResource(RES_STATS_FONT), 24)); // pf_tempesta_seven.ttf has problems with new line
+    m_textBoundsRect = Rectf(40.f, m_textFont->getAscent() + 20.f, getWindowWidth(), getWindowHeight());
 }
 
 Stats::~Stats()

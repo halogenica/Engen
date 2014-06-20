@@ -2,7 +2,6 @@
 
 using namespace gen;
 using namespace ci;
-using namespace ci::app;
 
 SquareParticle::SquareParticle() : 
                     Particle(),

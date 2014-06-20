@@ -10,6 +10,7 @@
 
 using namespace gen;
 using namespace ci;
+using namespace ci::app;
 
 World::World()
 {
@@ -22,10 +23,10 @@ World::World()
     m_pCamera = new PlayerCam(camera);
 
     // Load Sounds
-    m_pBgm1 = new OpenAL::Sound(ci::app::loadResource(RES_BGM1_SOUND));
-    m_pBgm2 = new OpenAL::Sound(ci::app::loadResource(RES_BGM2_SOUND));
-    m_pSfx1 = new OpenAL::Sound(ci::app::loadResource(RES_SFX1_SOUND));
-    m_pSfx2 = new OpenAL::Sound(ci::app::loadResource(RES_SFX2_SOUND));
+    m_pBgm1 = new OpenAL::Sound(loadResource(RES_BGM1_SOUND));
+    m_pBgm2 = new OpenAL::Sound(loadResource(RES_BGM2_SOUND));
+    m_pSfx1 = new OpenAL::Sound(loadResource(RES_SFX1_SOUND));
+    m_pSfx2 = new OpenAL::Sound(loadResource(RES_SFX2_SOUND));
 
     // Create Players
     m_pPlayer1 = new Player(Vec3f(-2.5f, 0.f, 3.f), m_pSfx1);
@@ -33,18 +34,18 @@ World::World()
 
     // Setup Input
     KeyMap keymap1 = {app::KeyEvent::KEY_UNKNOWN};
-    keymap1.moveUp       = ci::app::KeyEvent::KEY_UP;
-    keymap1.moveDown     = ci::app::KeyEvent::KEY_DOWN;
-    keymap1.moveLeft     = ci::app::KeyEvent::KEY_LEFT;
-    keymap1.moveRight    = ci::app::KeyEvent::KEY_RIGHT;
-    keymap1.shoot        = ci::app::KeyEvent::KEY_SPACE;
+    keymap1.moveUp       = KeyEvent::KEY_UP;
+    keymap1.moveDown     = KeyEvent::KEY_DOWN;
+    keymap1.moveLeft     = KeyEvent::KEY_LEFT;
+    keymap1.moveRight    = KeyEvent::KEY_RIGHT;
+    keymap1.shoot        = KeyEvent::KEY_SPACE;
 
     KeyMap keymap2 = {app::KeyEvent::KEY_UNKNOWN};
-    keymap2.moveUp       = ci::app::KeyEvent::KEY_w;
-    keymap2.moveDown     = ci::app::KeyEvent::KEY_s;
-    keymap2.moveLeft     = ci::app::KeyEvent::KEY_a;
-    keymap2.moveRight    = ci::app::KeyEvent::KEY_d;
-    keymap2.shoot        = ci::app::KeyEvent::KEY_SPACE;
+    keymap2.moveUp       = KeyEvent::KEY_w;
+    keymap2.moveDown     = KeyEvent::KEY_s;
+    keymap2.moveLeft     = KeyEvent::KEY_a;
+    keymap2.moveRight    = KeyEvent::KEY_d;
+    keymap2.shoot        = KeyEvent::KEY_SPACE;
 
     PadMap padmap = {PAD_UNKNOWN};
     padmap.moveYAxis    = PAD_LSTICK_Y;
@@ -69,7 +70,7 @@ World::World()
     m_enemies.push_back(pEnemy3);
 
     // Create Scene
-    ObjectData* pGround =   new ObjectData(new RenderData(ci::app::loadResource(RES_SQUARE_OBJ), ci::ColorAf(0.8f, 0.8f, 0.8f, 1.0f)),
+    ObjectData* pGround =   new ObjectData(new RenderData(loadResource(RES_SQUARE_OBJ), ColorAf(0.8f, 0.8f, 0.8f, 1.0f)),
                                            new PhysicsData(new btStaticPlaneShape(btVector3(0,0,1), 1), 0, COL_GROUND, COL_EVERYTHING),
                                            Vec3f(0, -5, 0), Quatf(-PI/2, 0, 0), Vec3f(1000.f, 1000.f, 1.f));   // infinite plane
     m_objects.push_back(pGround);

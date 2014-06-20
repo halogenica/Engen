@@ -3,13 +3,13 @@
 using namespace gen;
 using namespace ci;
 
-SpriteSheet::SpriteSheet(const ci::DataSourceRef& tex,
+SpriteSheet::SpriteSheet(const DataSourceRef& tex,
                          const UINT numTilesWide,
                          const UINT numTilesHigh) :
                              m_numTilesWide(numTilesWide),
                              m_numTilesHigh(numTilesHigh)
 {
-    m_tex = gl::Texture(ci::loadImage(tex));
+    m_tex = gl::Texture(loadImage(tex));
 
     m_tileWidth = m_tex.getWidth() / m_numTilesWide;
     ASSERT(m_tileWidth * m_numTilesWide == m_tex.getWidth());
@@ -22,19 +22,19 @@ SpriteSheet::SpriteSheet(const ci::DataSourceRef& tex,
     m_tex.setMagFilter(GL_NEAREST);
 }
 
-ci::Vec2f SpriteSheet::GetTextureScale() const
+Vec2f SpriteSheet::GetTextureScale() const
 {
     return Vec2f(m_tileWidth/(float)m_tex.getWidth(), m_tileHeight/(float)m_tex.getHeight());
 }
 /*
-ci::Vec2f SpriteSheet::GetTextureTranslate(const UINT index) const
+Vec2f SpriteSheet::GetTextureTranslate(const UINT index) const
 {
     ASSERT(range.x < (m_numTilesWide * m_numTilesHigh));
     ASSERT(range.y >= 0);
     return Vec2f(index%m_numTilesWide, index/m_numTilesWide);
 }
 */
-ci::Vec2f SpriteSheet::GetTextureTranslate(const ci::Vec2i& range, float time, float secondsPerSprite) const
+Vec2f SpriteSheet::GetTextureTranslate(const Vec2i& range, float time, float secondsPerSprite) const
 {
     ASSERT(range.x >= 0);
     ASSERT(range.x < (m_numTilesWide * m_numTilesHigh));
